@@ -4,7 +4,7 @@ Cron Jobs for iw
 
 ## Usage
 
-Create records in /cron. Record name can be anything. Record content must either have a "cron" property which uses crontab-style syntax to schedule recurring tasks. Alternative the "on" property can be used to schedule a one-time event by specifying a date string in format "YYYY-MM-DD hh:mm:ss.SSS".
+Create records in `/cron`. Record name can be anything. Record content must either have a "cron" property which uses crontab-style syntax to schedule recurring tasks. Alternatively the "on" property can be used to schedule a one-time event by specifying a date string in format "YYYY-MM-DD hh:mm:ss.SSS".
 
 The following actions can be triggered:
 - `setRecord`: replaces the contents of an entire record with the provided data
