@@ -23,7 +23,7 @@ export interface CronDefinition {
   deleteRecord?: string;
 
   call?: CallOperation;
-  trigger?: EventOperation;
+  emit?: EventOperation;
 }
 
 export interface CallOperation {
@@ -139,9 +139,9 @@ export class Cron extends Service {
         });
       }
 
-      if (definition.trigger) {
-        log.debug({ name: definition.trigger.name, data: definition.trigger.data }, 'Triggering Event ' + definition.call.name);
-        this.ds.emitEvent(definition.trigger.name, definition.trigger.data);
+      if (definition.emit) {
+        log.debug({ name: definition.emit.name, data: definition.emit.data }, 'Triggering Event ' + definition.emit.name);
+        this.ds.emitEvent(definition.emit.name, definition.emit.data);
       }
 
       if (definition.setRecord) {
