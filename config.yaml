@@ -1,0 +1,14 @@
+load:
+  - iw-base/modules/udp-discovery
+  - ./modules/cron
+
+modules:
+  - component: udp-discovery
+    priority: -1
+    await: connected
+    config:
+      clientConfig:
+        friendlyName: cron
+      requestPort: 6031
+
+  - component: cron
